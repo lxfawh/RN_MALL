@@ -26,7 +26,7 @@ class ShopsItem extends React.Component {
                 </View>
                 <GoodsItem />
                 <GoodsItem />
-                <GoodsItem />
+                <GoodsItem last />
             </View>
         )
     }

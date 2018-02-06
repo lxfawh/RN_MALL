@@ -15,13 +15,19 @@ const LINE = 1 / PixelRatio.get();
 class GoodsItem extends React.Component {
     constructor(props) {
         super(props)
+        // this.state = {
+        //     last: false
+        // }
     }
+    // componentWillMount() {
+    //     this.props.last && this.setState({ last: true })
+    // }
     render() {
         return (
             <TouchableOpacity style={styles.item} activeOpacity={.8}>
-                <CheckBox style={styles.check}/>
+                <CheckBox style={styles.check} />
                 <Image style={styles.image} source={require("../../../assets/img/mix2.jpg")} />
-                <View style={styles.info}>
+                <View style={[styles.info, { borderBottomWidth: this.props.last ? 0 : LINE }]} >
                     <Text style={styles.title} numberOfLines={1}>小米MIX2 6GB+64G小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GBB</Text>
                     <Text style={styles.intro} numberOfLines={1}>黑色陶瓷 64GB</Text>
                     <Text style={styles.price}>￥2999</Text>
@@ -53,8 +59,7 @@ const styles = StyleSheet.create({
     info: {
         flex: 1,
         height: 100,
-        borderBottomWidth: LINE,
-        borderBottomColor: '#aaa',
+        borderBottomColor: '#d1d1d1',
         borderStyle: 'solid'
     },
     title: {
@@ -76,8 +81,8 @@ const styles = StyleSheet.create({
         height: 30,
         lineHeight: 30
     },
-    check:{
-        borderWidth:1,
+    check: {
+        borderWidth: 1,
         // borderRadius:50%
     }
 })

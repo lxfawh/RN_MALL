@@ -38,19 +38,19 @@ const styles = StyleSheet.create({
     btn1: {
         backgroundColor: '#ff9630',
         alignItems: 'center',
-        height: 40,
+        height: 44,
         flex: 1
     },
     btn2: {
         backgroundColor: '#ff3030',
         alignItems: 'center',
-        height: 40,
+        height: 44,
         flex: 1,
     },
     text: {
         color: '#fff',
-        height: 40,
-        lineHeight: 40
+        height: 44,
+        lineHeight: 44
     }
 })
 

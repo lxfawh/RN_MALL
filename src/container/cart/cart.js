@@ -22,6 +22,7 @@ const { width, height } = Dimensions.get('window')
 class CartPage extends React.Component {
 
     static navigationOptions = {
+        header: <NavigatorBar title="购物车" />,
         headerTitle: '购物车',
         tabBarLabel: '购物车',
         tabBarIcon: <Image source={require('../../assets/icon/cart.png')} />,

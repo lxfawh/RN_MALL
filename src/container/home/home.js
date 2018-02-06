@@ -7,6 +7,7 @@ import {
     Image,
     PixelRatio,
     TouchableOpacity,
+    TouchableWithoutFeedback,
     ScrollView
 } from 'react-native'
 
@@ -54,41 +55,41 @@ class HomePage extends React.Component {
                 <ScrollView>
                     <Carousel />
                     <View style={styles.nav}>
-                        <TouchableOpacity onPress={() => { this.props.navigation.navigate(ROUTE_SEARCH, { id: '12345676878' }) }} >
+                        <TouchableWithoutFeedback onPress={() => { this.props.navigation.navigate(ROUTE_SEARCH, { id: '12345676878' }) }} >
                             <View style={styles.navItem}>
                                 <Image source={require('../../assets/icon/1.png')} style={styles.navIcon} />
                                 <Text style={styles.navTitle}>物流</Text>
                             </View>
-                        </TouchableOpacity>
+                        </TouchableWithoutFeedback>
 
-                        <TouchableOpacity onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >
+                        <TouchableWithoutFeedback onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >
                             <View style={styles.navItem}>
                                 <Image source={require('../../assets/icon/2.png')} style={styles.navIcon} />
                                 <Text style={styles.navTitle}>购物车</Text>
                             </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >
+                        </TouchableWithoutFeedback>
+                        <TouchableWithoutFeedback onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >
                             <View style={styles.navItem}>
                                 <Image source={require('../../assets/icon/3.png')} style={styles.navIcon} />
                                 <Text style={styles.navTitle}>优惠券</Text>
                             </View>
 
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >
+                        </TouchableWithoutFeedback>
+                        <TouchableWithoutFeedback onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >
                             <View style={styles.navItem}>
                                 <Image source={require('../../assets/icon/4.png')} style={styles.navIcon} />
                                 <Text style={styles.navTitle}>充值</Text>
                             </View>
 
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >
+                        </TouchableWithoutFeedback>
+                        <TouchableWithoutFeedback onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >
                             <View style={styles.navItem}>
                                 <Image source={require('../../assets/icon/5.png')} style={styles.navIcon} />
                                 <Text style={styles.navTitle}>钱包</Text>
                             </View>
-                        </TouchableOpacity>
+                        </TouchableWithoutFeedback>
                     </View>
- 
+
                     <View style={styles.recCon}>
                         <View style={styles.recHeader}>
                             <Text style={styles.recTit}>优品推荐</Text>

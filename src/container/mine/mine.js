@@ -6,6 +6,8 @@ import {
     Image
 } from 'react-native'
 
+import NavigatorBar from '../../components/navigatorBar'
+
 class MinePage extends React.Component {
 
     // static navigationOptions = ({ navigation }) => {
@@ -22,6 +24,7 @@ class MinePage extends React.Component {
     // };
 
     static navigationOptions = {
+        header: <NavigatorBar title="我的" />,
         headerTitle: '我的',
         tabBarLabel: '我的',
         tabBarIcon: <Image source={require('../../assets/icon/my.png')} />,

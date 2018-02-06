@@ -7,12 +7,14 @@ import {
     TouchableWithoutFeedback,
     TextInput,
     Dimensions,
-    StyleSheet
+    StyleSheet,
+    PixelRatio
 } from 'react-native'
 
 import { ROUTE_SEARCH } from '../constants/routeType'
 const { width } = Dimensions.get('window')
 const LOGO = require('../assets/logo.png')
+const Line = 1 / PixelRatio.get()
 
 export default class NavigatorBar extends React.Component {
     constructor(props) {
@@ -59,7 +61,7 @@ const styles = StyleSheet.create({
     searchCon: {
         height: 30,
         width: width - 110,
-        backgroundColor: '#f8f8f8',
+        backgroundColor: '#f1f1f1',
         borderRadius: 4,
         flexDirection: 'row',
         justifyContent: 'flex-start',

@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     searchCon: {
         height: 30,
         width: width - 60,
-        backgroundColor: '#f8f8f8',
+        backgroundColor: '#f1f1f1',
         borderRadius: 4,
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
         height: 30,
         width: width - 60,
         color: '#999',
-        textDecorationLine: 'none'
+        textDecorationLine: 'none',
+        color: '#333'
     },
     searchIcon: {
         width: 18,
