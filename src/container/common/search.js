@@ -23,7 +23,7 @@ export default class NavigatorBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            text: '请输入'
+            text: '请输入商品名称或店铺名称'
         }
     }
 

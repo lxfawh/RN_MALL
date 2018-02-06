@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         // display: 'flex',
         borderWidth: Line,
         borderColor: '#ddd',
-        borderRadius: 4,
+        // borderRadius: 4,
         marginTop: 10,
         marginLeft: 10,
         backgroundColor: '#fff'
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     image: {
         width: width / 2 - 15 - Line * 2,
         height: width / 2 - 15 - Line * 2,
-        borderRadius: 4
+        // borderRadius: 4
     },
     tit: {
         // backgroundColor: '#ffc',

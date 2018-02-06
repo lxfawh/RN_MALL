@@ -94,7 +94,7 @@ class HomePage extends React.Component {
                             <Text style={styles.recTit}>优品推荐</Text>
                             <Text style={styles.recMore} onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >更多 ></Text>
                         </View>
-                        <Image source={require('../../assets/img/rec.jpg')} style={styles.recImg} resizeMode="stretch" />
+                        <Image source={require('../../assets/img/rec.jpg')} style={styles.recImg} resizeMode="cover" />
                     </View>
                     <View style={styles.recItemCon}>
                         <View style={styles.recHeader}>
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f8f8f8'
     },
     nav: {
-        height: 100,
+        height: 90,
         backgroundColor: '#fff',
         display: 'flex',
         flexDirection: 'row',
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
         borderColor: '#ddd'
     },
     navItem: {
-        height: 100,
+        height: 90,
         alignItems: 'center',
         justifyContent: 'center',
         // backgroundColor:'#ccc'

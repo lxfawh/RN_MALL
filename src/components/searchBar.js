@@ -4,6 +4,7 @@ import {
     Text,
     Image,
     Alert,
+    TouchableWithoutFeedback,
     TextInput,
     Dimensions,
     StyleSheet
@@ -22,19 +23,22 @@ export default class NavigatorBar extends React.Component {
         return (
             <View style={styles.bar} onPress={this._search.bind(this)}>
                 <Image style={styles.logo} source={LOGO} />
-                <View style={styles.searchCon}>
-                    <Image style={styles.searchIcon} source={require('../../src/assets/icon/icon-search.png')} />
-                    <Text style={styles.placeholder}>输入关键字</Text>
-                    {/* <TextInput/> */}
-                </View>
+                <TouchableWithoutFeedback onPress={this._search}>
+                    <View style={styles.searchCon} >
+                        <Image style={styles.searchIcon} source={require('../../src/assets/icon/icon-search.png')} />
+                        <Text style={styles.placeholder}>输入关键字</Text>
+                        {/* <TextInput/> */}
+                    </View>
+                </TouchableWithoutFeedback >
+
                 <Image style={styles.msg} source={require('../assets/icon/ico-msg.png')} />
             </View>
         )
     }
 
     _search() {
-        Alert.alert('aaa')
-        // this.props.navigation.navigate(ROUTE_SEARCH) 
+        // Alert.alert('123')
+        this.props.navigation.navigate(RouteType.ROUTE_SEARCH)
     }
 }
 const styles = StyleSheet.create({
