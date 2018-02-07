@@ -26,7 +26,7 @@ const { width, height } = Dimensions.get('window')
 class HomePage extends React.Component {
 
     static navigationOptions = {
-        header: null,
+        header: <SearchBar />,
         headerTitle: '首页',
         tabBarLabel: '首页',
         tabBarIcon: <Image source={require('../../assets/icon/home.png')} />,
@@ -40,7 +40,6 @@ class HomePage extends React.Component {
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    <SearchBar {...this.props} />
                     <Carousel />
                     <View style={styles.nav}>
                         <TouchableWithoutFeedback onPress={() => { this.props.navigation.navigate(ROUTE_SEARCH, { id: '12345676878' }) }} >

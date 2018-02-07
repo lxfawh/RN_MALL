@@ -46,7 +46,7 @@ export default class NavigatorBar extends React.Component {
     _back() {
         // Alert.alert('123')
         // this.props.navigation.goBack(-1)
-        this.props.navigation.navigate(RouteType.ROUTE_HOME)
+        this.props.navigation.goBack();
         console.log(this.props)
     }
 }

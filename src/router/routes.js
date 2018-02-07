@@ -53,7 +53,7 @@ const AppNavigator = StackNavigator({
         mode: 'screen',
         gesturesEnabled: true,
         cardStyle: {
-            backgroundColor: "#fff",
+            backgroundColor: "#f5f5f5",
         },
         transitionConfig: (() => ({
         })),
@@ -79,16 +79,26 @@ const AppNavigator = StackNavigator({
 // });
 
 // const AppWithNavigationState = ({ dispatch, nav }) => {
-//     <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
+//     return <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
 // }
 
-// export default connect(state => ({ nav: state.nav }))(AppWithNavigationState);
 
-export default class App extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+class AppWithNavigationState extends React.Component {
     render() {
-        return (<AppNavigator />)
+        const { dispatch, nav } = this.props
+        return (
+            <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
+        )
     }
 }
+
+// const mapStateToProps = 
+// const mapStatetoProps = state => ({
+//     nav: state.nav
+// })
+
+export default connect((state) => {
+    return {
+        nav: state.nav,
+    }
+})(AppWithNavigationState)
