@@ -25,34 +25,22 @@ const { width, height } = Dimensions.get('window')
 
 class HomePage extends React.Component {
 
-    // static navigationOptions = ({ navigation }) => {
-    //     const { state, setParams } = navigation;
-    //     return {
-    //         tabBarLabel: 'test',
-    //         title: 'HOME_PAGE',
-    //         header: <NavigatorBar title='test' hiddenBackIcon={true} />,
-    //         tabBarOnPress: ({ scene, jumpToIndex }) => {
-    //             jumpToIndex(scene.index)
-    //         },
-    //         tabBarIcon: ({ tintColor }) => (<Text style={{ fontFamily: 'iconfont', color: tintColor, fontSize: 23, marginTop: 7 }}>&#xe676;</Text>)
-    //     }
-    // };
-
     static navigationOptions = {
-
-        header: <SearchBar />,
+        header: null,
         headerTitle: '首页',
         tabBarLabel: '首页',
         tabBarIcon: <Image source={require('../../assets/icon/home.png')} />,
-
     }
+
     constructor(props) {
         super(props)
     }
+
     render() {
         return (
             <View style={styles.container}>
                 <ScrollView>
+                    <SearchBar {...this.props} />
                     <Carousel />
                     <View style={styles.nav}>
                         <TouchableWithoutFeedback onPress={() => { this.props.navigation.navigate(ROUTE_SEARCH, { id: '12345676878' }) }} >
@@ -103,7 +91,6 @@ class HomePage extends React.Component {
                             <Text style={styles.recMore} onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >更多 ></Text>
                         </View>
                         <View style={styles.recItem}>
-                            <GoodsItem />
                             <GoodsItem />
                             <GoodsItem />
                             <GoodsItem />

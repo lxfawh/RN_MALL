@@ -11,7 +11,7 @@ import {
     PixelRatio
 } from 'react-native'
 
-import { ROUTE_SEARCH } from '../constants/routeType'
+import * as RouteType from '../constants/routeType'
 const { width } = Dimensions.get('window')
 const LOGO = require('../assets/logo.png')
 const Line = 1 / PixelRatio.get()
@@ -19,11 +19,12 @@ const Line = 1 / PixelRatio.get()
 export default class NavigatorBar extends React.Component {
     constructor(props) {
         super(props)
+        this._search = this._search.bind(this)
     }
 
     render() {
         return (
-            <View style={styles.bar} onPress={this._search.bind(this)}>
+            <View style={styles.bar} onPress={this._search}>
                 <Image style={styles.logo} source={LOGO} />
                 <TouchableWithoutFeedback onPress={this._search}>
                     <View style={styles.searchCon} >
@@ -39,7 +40,7 @@ export default class NavigatorBar extends React.Component {
     }
 
     _search() {
-        // Alert.alert('123')
+        console.log(this.props)
         this.props.navigation.navigate(RouteType.ROUTE_SEARCH)
     }
 }

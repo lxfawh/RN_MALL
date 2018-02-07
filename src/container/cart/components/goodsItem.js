@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    TouchableOpacity,
+    TouchableNativeFeedback,
     Text,
     View,
     CheckBox,
@@ -24,15 +24,17 @@ class GoodsItem extends React.Component {
     // }
     render() {
         return (
-            <TouchableOpacity style={styles.item} activeOpacity={.8}>
-                <CheckBox style={styles.check} />
-                <Image style={styles.image} source={require("../../../assets/img/mix2.jpg")} />
-                <View style={[styles.info, { borderBottomWidth: this.props.last ? 0 : LINE }]} >
-                    <Text style={styles.title} numberOfLines={1}>小米MIX2 6GB+64G小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GBB</Text>
-                    <Text style={styles.intro} numberOfLines={1}>黑色陶瓷 64GB</Text>
-                    <Text style={styles.price}>￥2999</Text>
+            <TouchableNativeFeedback>
+                <View style={styles.item}>
+                    <CheckBox style={styles.check} />
+                    <Image style={styles.image} source={require("../../../assets/img/mix2.jpg")} />
+                    <View style={[styles.info, { borderBottomWidth: this.props.last ? 0 : LINE }]} >
+                        <Text style={styles.title} numberOfLines={1}>小米MIX2 6GB+64G小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GBB</Text>
+                        <Text style={styles.intro} numberOfLines={1}>黑色陶瓷 64GB</Text>
+                        <Text style={styles.price}>￥2999</Text>
+                    </View>
                 </View>
-            </TouchableOpacity >
+            </TouchableNativeFeedback >
         )
     }
 }

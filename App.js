@@ -2,14 +2,15 @@ import React from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
-import AppWithNavigationState from './src/router/router'
-import reducer from './src/reducers/reducer'
+import AppWithNavigationState from './src/router/routes'
+import reducer from './src/reducers/index'
 
 const store = createStore(reducer, applyMiddleware(thunk))
 
 export default class App extends React.Component {
     constructor(props) {
         super(props)
+        this.store = store
     }
     render() {
         return (

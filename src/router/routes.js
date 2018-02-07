@@ -42,32 +42,41 @@ const AppNavigator = StackNavigator({
     [RouteType.ROUTE_INIT]: {
         screen: TabNav
     },
-    [RouteType.ROUTE_SEARCH]:{
+    [RouteType.ROUTE_SEARCH]: {
         screen: SearchPage
     }
 
 }, {
-    headerMode: 'screen',
+        headerMode: 'screen',
         initialRouteName: RouteType.ROUTE_INIT,
-            transitionConfig: TransitionConfig,
-                mode: 'card',
-                    gesturesEnabled: true,
-                        cardStyle: {
-        backgroundColor: "#fff",
+        transitionConfig: () => ({ screenInterpolator: CardStackStyleInterpolator.forHorizontal }),
+        mode: 'screen',
+        gesturesEnabled: true,
+        cardStyle: {
+            backgroundColor: "#fff",
         },
-    transitionConfig: (() => ({
-    })),
+        transitionConfig: (() => ({
+        })),
         onTransitionStart: (() => {
             console.log('页面跳转动画开始')
         }),
-            onTransitionEnd: (() => {
-                console.log('页面跳转动画结束')
-            })
-})
+        onTransitionEnd: (() => {
+            console.log('页面跳转动画结束')
+        })
+    })
 
-const TransitionConfig = () => {
-
-}
+// const TransitionConfig = () => ({
+//     screenInterpolator: (sceneProps) => {
+//         const { scene } = sceneProps;
+//         const { route } = scene;
+//         const params = route.params || {};
+//         const transition = params.transition || 'forHorizontal';
+//         // forVertical
+//         // const transition = 'forHorizontal'
+//         return CardStackStyleInterpolator[transition](sceneProps);
+//         // screenInterpolator:CardStackStyleInterpolator.forVertical,
+//     },
+// });
 
 // const AppWithNavigationState = ({ dispatch, nav }) => {
 //     <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />

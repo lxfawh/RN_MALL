@@ -19,13 +19,12 @@ export default class Carousel extends React.Component {
     componentDidMount() {
         setTimeout(() => {
             this.setState({ show: true })
-        }, 0)
+        }, 10)
     }
 
     render() {
         return this.state.show ?
             (<Swiper style={styles.wrapper} loop>
-                {/* <Image resizeMode='cover' style={styles.image} source={img1} /> */}
                 <Image resizeMode='cover' style={styles.image} source={img2} />
                 <Image resizeMode='cover' style={styles.image} source={img3} />
                 <Image resizeMode='cover' style={styles.image} source={img4} />
