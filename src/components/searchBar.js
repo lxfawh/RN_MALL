@@ -41,7 +41,8 @@ export default class NavigatorBar extends React.Component {
 
     _search() {
         console.log(this.props)
-        this.props.navigation.navigate(RouteType.ROUTE_SEARCH)
+        // this.props.navigation.navigate(RouteType.ROUTE_SEARCH)
+        this.props.navigation.dispatch({ type: 'push', routeName: RouteType.ROUTE_SEARCH, params: { from: 'test' } })
     }
 }
 const styles = StyleSheet.create({
