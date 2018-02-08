@@ -26,7 +26,7 @@ class MinePage extends React.Component {
     static navigationOptions = {
         // header: <NavigatorBar title="我的" />,
         header: null,
-        tabBarVisible: false,
+        // tabBarVisible: false,
         tabBarLabel: '我的',
         tabBarIcon: <Image source={require('../../assets/icon/my.png')} />,
     }
@@ -37,8 +37,8 @@ class MinePage extends React.Component {
                 <Text>Hello, mine!</Text>
             </View>
         )
-
     }
+    
 }
 
 

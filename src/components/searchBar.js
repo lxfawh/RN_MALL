@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     searchCon: {
         height: 30,
         width: width - 110,
-        backgroundColor: '#f1f1f1',
+        backgroundColor: '#eee',
         borderRadius: 4,
         flexDirection: 'row',
         justifyContent: 'flex-start',

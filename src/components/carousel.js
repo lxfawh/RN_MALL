@@ -25,9 +25,9 @@ export default class Carousel extends React.Component {
     render() {
         return this.state.show ?
             (<Swiper style={styles.wrapper} loop>
+                <Image resizeMode='cover' style={styles.image} source={img1} />
                 <Image resizeMode='cover' style={styles.image} source={img2} />
                 <Image resizeMode='cover' style={styles.image} source={img3} />
-                <Image resizeMode='cover' style={styles.image} source={img4} />
             </Swiper>
 
             ) : (
