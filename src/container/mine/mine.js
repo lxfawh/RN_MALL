@@ -24,16 +24,20 @@ class MinePage extends React.Component {
     // };
 
     static navigationOptions = {
-        header: <NavigatorBar title="我的" />,
-        headerTitle: '我的',
+        // header: <NavigatorBar title="我的" />,
+        header: null,
+        tabBarVisible: false,
         tabBarLabel: '我的',
         tabBarIcon: <Image source={require('../../assets/icon/my.png')} />,
     }
 
     render() {
-        return <View>
-            <Text>Hello, mine!</Text>
-        </View>;
+        return (
+            <View>
+                <Text>Hello, mine!</Text>
+            </View>
+        )
+
     }
 }
 

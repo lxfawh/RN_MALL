@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import * as RouteType from '../constants/routeType'
 
 import HomePage from '../container/home/home'
+import Discover from '../container/discover/discover'
 import CartPage from '../container/cart/cart'
 import MinePage from '../container/mine/mine'
 import SearchPage from '../container/common/search'
@@ -11,10 +12,12 @@ import SearchPage from '../container/common/search'
 
 const TabNav = TabNavigator({
     [RouteType.ROUTE_HOME]: { screen: HomePage },
+    [RouteType.ROUTE_DISCOVER]: { screen: Discover },
     [RouteType.ROUTE_CART]: { screen: CartPage },
     [RouteType.ROUTE_MINE]: { screen: MinePage }
 }, {
         lazy: true,
+        headerMode: 'screen',
         tabBarPosition: 'bottom',
         animationEnabled: true,
         tabBarComponent: TabBarBottom,

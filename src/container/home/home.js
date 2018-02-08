@@ -29,6 +29,7 @@ class HomePage extends React.Component {
         header: <SearchBar />,
         headerTitle: '首页',
         tabBarLabel: '首页',
+        headerMode: 'screen',
         tabBarIcon: <Image source={require('../../assets/icon/home.png')} />,
     }
 
@@ -36,6 +37,12 @@ class HomePage extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.navigation.setParams({
+            title: '自定义Header',
+            navigatePress: this.navigatePress
+        })
+    }
     render() {
         return (
             <View style={styles.container}>

@@ -19,7 +19,9 @@ const BackIcon = require('../../assets/icon/icon-back.png')
 export default class NavigatorBar extends React.Component {
 
     static navigationOptions = {
-        header: null
+        header: null,
+        animationEnabled: false,
+        headerMode: 'screen',
     }
 
     constructor(props) {
