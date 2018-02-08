@@ -8,6 +8,7 @@ import Discover from '../container/discover/discover'
 import CartPage from '../container/cart/cart'
 import MinePage from '../container/mine/mine'
 import SearchPage from '../container/common/search'
+import msgPage from '../container/common/msgPage'
 
 
 const TabNav = TabNavigator({
@@ -48,6 +49,9 @@ const AppNavigator = StackNavigator(
         },
         [RouteType.ROUTE_SEARCH]: {
             screen: SearchPage
+        },
+        [RouteType.ROUTE_MSG]: {
+            screen: msgPage
         }
 
     }, {

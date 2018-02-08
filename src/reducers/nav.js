@@ -1,18 +1,19 @@
-// import App from '../../App';
-// // import App from '../router/routes'
-// console.log("APP", App)
+import App from '../../App';
+// import App from '../router/routes'
+console.log("APP", App)
 
-// export default function nav(state, action) {
-//     let nextState;
-//     switch (action.type) {
-//         default:
-//             console.log(state, action)
-//             console.log("APP", App)
-//             nextState = App.router.getStateForAction(action, state);
-//             break;
-//     }
-//     return nextState || state;
-// }
+export default function nav(state, action) {
+    // let nextState;
+    // switch (action.type) {
+    //     default:
+    //         console.log(state, action)
+    //         console.log("APP", App)
+    //         nextState = App.router.getStateForAction(action, state);
+    //         break;
+    // }
+    // return nextState || state;
+    return state
+}
 
 
 // import { combineReducers } from 'redux'
