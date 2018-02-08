@@ -13,7 +13,6 @@ import {
 
 import * as RouteType from '../constants/routeType'
 const { width } = Dimensions.get('window')
-const LOGO = require('../assets/logo.png')
 const Line = 1 / PixelRatio.get()
 
 export default class NavigatorBar extends React.Component {
@@ -24,8 +23,12 @@ export default class NavigatorBar extends React.Component {
 
     render() {
         return (
-            <View style={styles.bar} onPress={this._search}>
-                <Image style={styles.logo} source={LOGO} />
+            <View style={styles.bar}>
+                <View style={styles.scan}>
+                    <Image style={styles.scanIcon} source={require('../assets/icon/icon-scan.png')} />
+                    <Text style={styles.scanText}>扫一扫</Text>
+                </View>
+
                 <TouchableWithoutFeedback onPress={this._search}>
                     <View style={styles.searchCon} >
                         <Image style={styles.searchIcon} source={require('../../src/assets/icon/icon-search.png')} />
@@ -33,8 +36,11 @@ export default class NavigatorBar extends React.Component {
                         {/* <TextInput/> */}
                     </View>
                 </TouchableWithoutFeedback >
+                <View style={styles.msg}>
+                    <Image style={styles.msgIcon} source={require('../assets/icon/icon-msg.png')} />
+                    <Text style={styles.msgText}>消息</Text>
+                </View>
 
-                <Image style={styles.msg} source={require('../assets/icon/ico-msg.png')} />
             </View>
         )
     }
@@ -55,11 +61,6 @@ const styles = StyleSheet.create({
         // backgroundColor:'transparent',
         alignItems: 'center'
     },
-    logo: {
-        width: 30,
-        height: 30,
-
-    },
     searchCon: {
         height: 30,
         width: width - 110,
@@ -78,15 +79,24 @@ const styles = StyleSheet.create({
         height: 18,
         marginLeft: 10
     },
-    msg: {
-        width: 30,
-        height: 30,
-
-
+    scan: {
+        alignItems: 'center'
     },
-    mainTit: {
-        fontSize: 18,
-        color: '#333',
-        fontWeight: 'normal'
-    }
+    scanIcon: {
+        width: 20,
+        height: 20
+    },
+    scanText: {
+        fontSize: 10
+    },
+    msg: {
+        alignItems: 'center'
+    },
+    msgIcon: {
+        width: 24,
+        height: 24
+    },
+    msgText: {
+        fontSize: 10
+    },
 })
