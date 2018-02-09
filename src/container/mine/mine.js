@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
         marginLeft: 10
     },
     allTit: {
-        fontSize: 12,
+        fontSize: 14,
         color: '#999',
         marginRight: 10,
     },
