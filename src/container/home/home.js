@@ -17,6 +17,7 @@ import { ROUTE_CART, ROUTE_SEARCH } from '../../constants/routeType'
 import SearchBar from '../../components/searchBar'
 import Carousel from '../../components/carousel'
 import GoodsItem from './components/goodsItem'
+import TabBarItem from '../../components/tabBarItem'
 
 import { Button } from 'antd-mobile'
 
@@ -30,7 +31,15 @@ class HomePage extends React.Component {
         headerTitle: '首页',
         tabBarLabel: '首页',
         headerMode: 'screen',
-        tabBarIcon: <Image source={require('../../assets/icon/home.png')} />,
+        // tabBarIcon: <Image source={require('../../assets/icon/home.png')} />,
+        tabBarIcon: ({ focused, tintColor }) => (
+            <TabBarItem
+                tintColor={tintColor}
+                focused={focused}
+                normalImage={require('../../assets/icon/home.png')}
+                selectedImage={require('../../assets/icon/home_fill.png')}
+            />
+        )
     }
 
     constructor(props) {
@@ -89,7 +98,7 @@ class HomePage extends React.Component {
                             <Text style={styles.recTit}>优品推荐</Text>
                             <Text style={styles.recMore} onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >更多 ></Text>
                         </View>
-                        <Image source={require('../../assets/img/4.jpg')} style={styles.recImg} resizeMode="cover" />
+                        <Image source={require('../../assets/img/rec.jpg')} style={styles.recImg} resizeMode="cover" />
                     </View>
                     <View style={styles.recItemCon}>
                         <View style={styles.recHeader}>

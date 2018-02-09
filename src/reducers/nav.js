@@ -1,19 +1,11 @@
-import App from '../../App';
+// import AppNavigation from '../../App';
 // import App from '../router/routes'
-console.log("APP", App)
-
-export default function nav(state, action) {
-    // let nextState;
-    // switch (action.type) {
-    //     default:
-    //         console.log(state, action)
-    //         console.log("APP", App)
-    //         nextState = App.router.getStateForAction(action, state);
-    //         break;
-    // }
-    // return nextState || state;
-    return state
-}
+import AppNavigation from '../router/routes';
+const initialNavState = AppNavigation.router.getStateForAction(firstAction)
+export default function nav(state = initialState, action) {
+    const newState = Object.assign({}, state, AppNavigation.router.getStateForAction(action, state));
+    return newState || state;
+};
 
 
 // import { combineReducers } from 'redux'

@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 
 import NavigatorBar from '../../components/navigatorBar'
+import TabBarItem from '../../components/tabBarItem'
 
 class MinePage extends React.Component {
 
@@ -28,7 +29,15 @@ class MinePage extends React.Component {
         header: null,
         // tabBarVisible: false,
         tabBarLabel: '我的',
-        tabBarIcon: <Image source={require('../../assets/icon/my.png')} />,
+        // tabBarIcon: <Image source={require('../../assets/icon/my.png')} />,
+        tabBarIcon: ({ focused, tintColor }) => (
+            <TabBarItem
+                tintColor={tintColor}
+                focused={focused}
+                normalImage={require('../../assets/icon/my.png')}
+                selectedImage={require('../../assets/icon/my_fill.png')}
+            />
+        )
     }
 
     render() {
@@ -38,7 +47,7 @@ class MinePage extends React.Component {
             </View>
         )
     }
-    
+
 }
 
 

@@ -16,6 +16,7 @@ const LINE = 1 / PixelRatio.get();
 import { ROUTE_CART, ROUTE_SEARCH, ROUTE_MSG } from '../../constants/routeType'
 import NavigatorBar from '../../components/navigatorBar'
 import MsgItem from './components/msgItem'
+import TabBarItem from '../../components/tabBarItem'
 
 import { Button } from 'antd-mobile'
 
@@ -29,7 +30,15 @@ class Discover extends React.Component {
         header: <NavigatorBar title="发现" />,
         // headerTitle: '发现',
         tabBarLabel: '发现',
-        tabBarIcon: <Image source={require('../../assets/icon/discover.png')} />,
+        // tabBarIcon: <Image source={require('../../assets/icon/discover.png')} />,
+        tabBarIcon: ({ focused, tintColor }) => (
+            <TabBarItem
+                tintColor={tintColor}
+                focused={focused}
+                normalImage={require('../../assets/icon/discover.png')}
+                selectedImage={require('../../assets/icon/discover_fill.png')}
+            />
+        )
     }
 
     constructor(props) {

@@ -14,6 +14,7 @@ import {
 import NavigatorBar from '../../components/navigatorBar'
 import BtnGroup from './components/btnGroup'
 import ShopItem from './components/shopItem'
+import TabBarItem from '../../components/tabBarItem'
 
 const { width, height } = Dimensions.get('window')
 
@@ -23,9 +24,17 @@ class CartPage extends React.Component {
 
     static navigationOptions = {
         header: <NavigatorBar title="购物车" />,
-        headerTitle: '购物车',
+        // headerTitle: '购物车',
         tabBarLabel: '购物车',
-        tabBarIcon: <Image source={require('../../assets/icon/cart.png')} />,
+        // tabBarIcon: <Image source={require('../../assets/icon/cart.png')} />,
+        tabBarIcon: ({ focused, tintColor }) => (
+            <TabBarItem
+                tintColor={tintColor}
+                focused={focused}
+                normalImage={require('../../assets/icon/cart.png')}
+                selectedImage={require('../../assets/icon/cart_fill.png')}
+            />
+        )
     }
 
     render() {
