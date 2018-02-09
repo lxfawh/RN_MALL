@@ -22,7 +22,7 @@ const TabNav = TabNavigator({
         tabBarPosition: 'bottom',
         animationEnabled: true,
         tabBarComponent: TabBarBottom,
-        initialRouteName: RouteType.ROUTE_HOME,
+        initialRouteName: RouteType.ROUTE_MINE,
         tabBarOptions: {
             showIcon: true,
             activeTintColor: '#ff3030',
@@ -30,7 +30,7 @@ const TabNav = TabNavigator({
             style: {
                 backgroundColor: '#fff',
                 height: 50,
-                paddingBottom: 5
+                paddingBottom: 4
             },
             labelStyle: {
                 fontSize: 10

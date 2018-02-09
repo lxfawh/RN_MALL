@@ -95,7 +95,7 @@ class HomePage extends React.Component {
 
                     <View style={styles.recCon}>
                         <View style={styles.recHeader}>
-                            <Text style={styles.recTit}>优品推荐</Text>
+                            <Text style={styles.recTit}>年货节</Text>
                             <Text style={styles.recMore} onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >更多 ></Text>
                         </View>
                         <Image source={require('../../assets/img/rec.jpg')} style={styles.recImg} resizeMode="cover" />
