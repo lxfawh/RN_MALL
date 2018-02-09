@@ -17,12 +17,12 @@ class ListItem extends React.Component {
             <TouchableNativeFeedback>
                 <View style={styles.list}>
                     {ico}
-                    <View style={styles.text}>
+                    <View style={[styles.text, { borderBottomColor: '#ddd', borderBottomWidth: this.props.last ? 0 : Line }]}>
                         <Text style={styles.title}>{this.props.title || '请输入标题'}</Text>
                         <Image source={require('../../../assets/icon/icon-right.png')} style={styles.arrow} />
                     </View>
                 </View>
-            </TouchableNativeFeedback>
+            </TouchableNativeFeedback >
         )
     }
 }
@@ -30,31 +30,28 @@ class ListItem extends React.Component {
 const styles = StyleSheet.create({
     list: {
         width: width,
-        height: 44,
+        height: 50,
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#fff'
     },
     text: {
-        height: 44,
+        height: 50,
         flexDirection: 'row',
         flex: 1,
         justifyContent: 'space-between',
-        alignItems: 'center',
-        borderTopWidth: Line,
-        borderBottomWidth: Line,
-        borderColor: '#ddd',
-
+        alignItems: 'center'
     },
     ico: {
-        width: 20,
-        height: 20,
+        width: 24,
+        height: 24,
         marginLeft: 10,
         marginRight: 10
     },
     title: {
-        color: '#333'
+        color: '#333',
+        fontSize: 16
     },
     arrow: {
         width: 16,

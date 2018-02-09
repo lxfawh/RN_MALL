@@ -71,8 +71,8 @@ class MinePage extends React.Component {
                             <Text style={styles.intro}>{this.state.intro}</Text>
                         </View>
                         <View style={styles.set}>
-                            <Image source={require('../../assets/icon/set.png')} style={styles.setIco} />
-                            <Text style={{ color: '#fff' }}>设置 ></Text>
+                            {/* <Image source={require('../../assets/icon/set.png')} style={styles.setIco} /> */}
+                            <Text style={{ color: '#fff' }}>个人信息 ></Text>
                         </View>
                         <Image source={this.state.bgImg} style={styles.bgImg} resizeMode="contain" />
                     </View>
@@ -120,9 +120,14 @@ class MinePage extends React.Component {
                         </View>
                     </View>
 
-                    <ListItem icon={require('../../assets/icon/icon-scan.png')} title="扫一扫" />
-                    <ListItem icon={require('../../assets/icon/icon-scan.png')} title="扫一扫" />
-                    <ListItem icon={require('../../assets/icon/icon-scan.png')} title="扫一扫" />
+                    <View style={styles.listGroup}>
+                        <ListItem icon={require('../../assets/icon/footprint.png')} title="足迹" />
+                        <ListItem icon={require('../../assets/icon/money.png')} title="我的钱包" />
+                        <ListItem icon={require('../../assets/icon/vip.png')} title="会员中心" last />
+                    </View>
+                    <View style={styles.listGroup}>
+                        <ListItem icon={require('../../assets/icon/setting.png')} title="设置" last />
+                    </View>
                 </View>
             </ScrollView>
         )
@@ -177,11 +182,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginRight: 20,
     },
-    setIco: {
-        width: 20,
-        height: 20,
-        marginRight: 5
-    },
+    // setIco: {
+    //     width: 20,
+    //     height: 20,
+    //     marginRight: 5
+    // },
     bgImg: {
         position: 'absolute',
         zIndex: -1,
@@ -214,7 +219,7 @@ const styles = StyleSheet.create({
         // backgroundColor: '#ccc'
     },
     orderTit: {
-        height: 40,
+        height: 44,
         backgroundColor: '#fff',
         flexDirection: 'row',
         alignItems: 'center',
@@ -224,7 +229,7 @@ const styles = StyleSheet.create({
         borderColor: '#ddd'
     },
     myTit: {
-        fontSize: 14,
+        fontSize: 16,
         color: '#333',
         marginLeft: 10
     },
@@ -246,16 +251,21 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor: '#eee'
     },
     statusIcon: {
-        width: 30,
-        height: 30,
+        width: 34,
+        height: 34,
         marginBottom: 5
     },
     statusTit: {
         fontSize: 12,
         color: '#333'
+    },
+    listGroup: {
+        marginTop: 10,
+        borderTopWidth: Line,
+        borderBottomWidth: Line,
+        borderColor: '#ddd'
     }
 })
 
