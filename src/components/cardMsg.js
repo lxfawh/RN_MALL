@@ -3,7 +3,7 @@ import React from 'react'
 import { StyleSheet, View, Text, Image, Dimensions, TouchableNativeFeedback, ScrollView, PixelRatio } from 'react-native'
 
 const { width, height } = Dimensions.get('window')
-const pic = require('../assets/img/2.jpg')
+const pic = require('../assets/img/3.jpg')
 const Line = 1 / PixelRatio.get()
 
 

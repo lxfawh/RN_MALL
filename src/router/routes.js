@@ -18,11 +18,12 @@ const TabNav = TabNavigator({
     [RouteType.ROUTE_MINE]: { screen: MinePage }
 }, {
         lazy: true,
-        // headerMode: 'screen',
+        headerMode: 'screen',
         tabBarPosition: 'bottom',
         animationEnabled: true,
         tabBarComponent: TabBarBottom,
-        initialRouteName: RouteType.ROUTE_MINE,
+        swipeEnabled: false,
+        initialRouteName: RouteType.ROUTE_HOME,
         tabBarOptions: {
             showIcon: true,
             activeTintColor: '#ff3030',

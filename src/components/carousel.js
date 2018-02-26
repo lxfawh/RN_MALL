@@ -7,6 +7,7 @@ const img1 = require('../assets/img/1.jpg')
 const img2 = require('../assets/img/2.jpg')
 const img3 = require('../assets/img/3.jpg')
 const img4 = require('../assets/img/4.jpg')
+const img5 = require('../assets/img/5.jpg')
 
 export default class Carousel extends React.Component {
 
@@ -19,15 +20,17 @@ export default class Carousel extends React.Component {
     componentDidMount() {
         setTimeout(() => {
             this.setState({ show: true })
-        }, 10)
+        }, 0)
     }
 
     render() {
         return this.state.show ?
-            (<Swiper style={styles.wrapper} loop>
+            (<Swiper style={styles.wrapper} loop={true}>
                 <Image resizeMode='cover' style={styles.image} source={img1} />
                 <Image resizeMode='cover' style={styles.image} source={img2} />
                 <Image resizeMode='cover' style={styles.image} source={img3} />
+                <Image resizeMode='cover' style={styles.image} source={img4} />
+                <Image resizeMode='cover' style={styles.image} source={img5} />
             </Swiper>
 
             ) : (
@@ -40,11 +43,11 @@ export default class Carousel extends React.Component {
 }
 const styles = StyleSheet.create({
     wrapper: {
-        height: 200,
+        height: 150,
         backgroundColor: '#f8f8f8'
     },
     image: {
         width: width,
-        height: 200
+        height: 150
     }
 })

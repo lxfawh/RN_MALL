@@ -72,28 +72,32 @@ class MinePage extends React.Component {
                         </View>
                         <View style={styles.set}>
                             {/* <Image source={require('../../assets/icon/set.png')} style={styles.setIco} /> */}
-                            <Text style={{ color: '#fff' }}>个人信息 ></Text>
+                            <Text style={{ color: '#fff', marginRight: 5 }}>个人信息</Text>
+                            <Image source={require('../../assets/icon/icon-right.png')} style={styles.arrow} />
                         </View>
                         <Image source={this.state.bgImg} style={styles.bgImg} resizeMode="contain" />
                     </View>
                     <View style={styles.fav}>
                         <View style={styles.favItem}>
                             <Text style={styles.favNum}>100</Text>
-                            <Text style={styles.favTit}>收藏商品</Text>
+                            <Text style={styles.favTit}>商品关注</Text>
                         </View>
                         <View style={styles.favItem}>
-                            <Text style={styles.favNum}>100</Text>
-                            <Text style={styles.favTit}>收藏商品</Text>
+                            <Text style={styles.favNum}>99</Text>
+                            <Text style={styles.favTit}>店铺关注</Text>
                         </View>
                         <View style={styles.favItem}>
-                            <Text style={styles.favNum}>100</Text>
-                            <Text style={styles.favTit}>收藏商品</Text>
+                            <Text style={styles.favNum}>9</Text>
+                            <Text style={styles.favTit}>浏览历史</Text>
                         </View>
                     </View>
                     <View style={styles.order}>
                         <View style={styles.orderTit}>
                             <Text style={styles.myTit}>我的订单</Text>
-                            <Text style={styles.allTit}>查看更多订单 ></Text>
+                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                <Text style={styles.allTit}>全部订单</Text>
+                                <Image source={require('../../assets/icon/icon-right.png')} style={styles.arrow} />
+                            </View>
                         </View>
                         <View style={styles.orderStatus}>
                             <View style={styles.statusItem}>
@@ -105,8 +109,8 @@ class MinePage extends React.Component {
                                 <Text style={styles.statusTit}>待发货</Text>
                             </View>
                             <View style={styles.statusItem}>
-                                <Image style={styles.statusIcon} source={require('../../assets/icon/icon-yfh.png')} />
-                                <Text style={styles.statusTit}>已发货</Text>
+                                <Image style={styles.statusIcon} source={require('../../assets/icon/icon-dsh.png')} />
+                                <Text style={styles.statusTit}>待收货</Text>
                             </View>
                             <View style={styles.statusItem}>
                                 <Image style={styles.statusIcon} source={require('../../assets/icon/icon-dpj.png')} />
@@ -121,15 +125,17 @@ class MinePage extends React.Component {
                     </View>
 
                     <View style={styles.listGroup}>
-                        <ListItem icon={require('../../assets/icon/footprint.png')} title="足迹" />
-                        <ListItem icon={require('../../assets/icon/money.png')} title="我的钱包" />
-                        <ListItem icon={require('../../assets/icon/vip.png')} title="会员中心" last />
+                        <ListItem icon={require('../../assets/icon/money.png')} title="我的资产" />
+                        <ListItem icon={require('../../assets/icon/vip.png')} title="会员中心" />
+                        <ListItem icon={require('../../assets/icon/ticket.png')} title="卡券管理" />
+                        {/* <ListItem icon={require('../../assets/icon/time.png')} title="历史记录" /> */}
+                        <ListItem icon={require('../../assets/icon/help.png')} title="帮助/反馈" last />
                     </View>
                     <View style={styles.listGroup}>
                         <ListItem icon={require('../../assets/icon/setting.png')} title="设置" last />
                     </View>
                 </View>
-            </ScrollView>
+            </ScrollView >
         )
     }
 
@@ -137,15 +143,16 @@ class MinePage extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        width: width
+        width: width,
+        paddingBottom: 10
     },
     header: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        height: 160,
-        position: 'relative'
-        // backgroundColor: '#aaa'
+        height: 140,
+        position: 'relative',
+        backgroundColor: '#ff0000'
     },
     avatar: {
         height: 66,
@@ -180,7 +187,7 @@ const styles = StyleSheet.create({
     set: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginRight: 20,
+        marginRight: 10,
     },
     // setIco: {
     //     width: 20,
@@ -193,7 +200,7 @@ const styles = StyleSheet.create({
         width: width
     },
     fav: {
-        height: 60,
+        height: 64,
         flexDirection: 'row',
         backgroundColor: '#fff',
         justifyContent: 'space-around',
@@ -207,11 +214,12 @@ const styles = StyleSheet.create({
     },
     favNum: {
         fontSize: 20,
-        color: '#ff9830'
+        color: '#ff9830',
+        lineHeight: 30
     },
     favTit: {
         fontSize: 10,
-        color: '#333'
+        color: '#666'
     },
     order: {
         marginTop: 10,
@@ -219,14 +227,15 @@ const styles = StyleSheet.create({
         // backgroundColor: '#ccc'
     },
     orderTit: {
-        height: 44,
+        height: 46,
         backgroundColor: '#fff',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         borderTopWidth: Line,
         borderBottomWidth: Line,
-        borderColor: '#ddd'
+        borderColor: '#ddd',
+        backgroundColor: '#fff'
     },
     myTit: {
         fontSize: 16,
@@ -236,7 +245,12 @@ const styles = StyleSheet.create({
     allTit: {
         fontSize: 14,
         color: '#999',
-        marginRight: 10,
+        marginRight: 5,
+    },
+    arrow: {
+        width: 16,
+        height: 16,
+        marginRight: 10
     },
     orderStatus: {
         flexDirection: 'row',
@@ -248,13 +262,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     statusItem: {
+        width: width / 5,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
     },
     statusIcon: {
-        width: 34,
-        height: 34,
+        width: 24,
+        height: 24,
         marginBottom: 5
     },
     statusTit: {
