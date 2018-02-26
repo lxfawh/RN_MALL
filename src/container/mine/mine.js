@@ -51,7 +51,7 @@ class MinePage extends React.Component {
         this.state = {
             bgImg: require('../../assets/img/back.jpg'),
             avatar: require('../../assets/default.jpg'),
-            name: '阿里巴巴',
+            name: '李明泽²⁰⁴⁹',
             intro: '好好学习，天天向上'
         }
     }
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        height: 140,
+        height: 150,
         position: 'relative',
         backgroundColor: '#ff0000'
     },
@@ -214,11 +214,11 @@ const styles = StyleSheet.create({
     },
     favNum: {
         fontSize: 20,
-        color: '#ff9830',
+        color: '#f9411f',
         lineHeight: 30
     },
     favTit: {
-        fontSize: 10,
+        fontSize: 12,
         color: '#666'
     },
     order: {

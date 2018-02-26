@@ -105,6 +105,7 @@ class HomePage extends React.Component {
                             <Text style={styles.recTit}>新品推荐</Text>
                             <Text style={styles.recMore} onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >更多 ></Text>
                         </View>
+                        <Image source={require('../../assets/img/5.jpg')} style={styles.recImg} resizeMode="cover" />
                         <View style={styles.recItem}>
                             <GoodsItem pic={require('../../assets/img/iphonex.jpg')} title="Apple iPhone X (A1865) 256GB 深空灰色" />
                             <GoodsItem pic={require('../../assets/img/ipad.jpg')} title="Apple iPad Pro 平板电脑 12.9英寸（256G WLAN版/A10X芯片/Retina屏/Multi-Touch技术 MP6J2CH/A）金色" />
