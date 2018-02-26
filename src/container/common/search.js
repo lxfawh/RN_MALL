@@ -19,7 +19,9 @@ const BackIcon = require('../../assets/icon/icon-back.png')
 export default class NavigatorBar extends React.Component {
 
     static navigationOptions = {
-        header: null
+        header: null,
+        animationEnabled: false,
+        headerMode: 'screen',
     }
 
     constructor(props) {
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
     searchCon: {
         height: 30,
         width: width - 60,
-        backgroundColor: '#f1f1f1',
+        backgroundColor: '#eee',
         borderRadius: 4,
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -82,9 +84,8 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         height: 30,
         width: width - 60,
-        color: '#999',
-        textDecorationLine: 'none',
-        color: '#333'
+        color: '#666',
+        textDecorationLine: 'none'
     },
     searchIcon: {
         width: 18,

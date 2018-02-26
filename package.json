@@ -9,11 +9,12 @@
   "dependencies": {
     "antd-mobile": "^2.1.5",
     "immutable": "^3.8.2",
+    "native-base": "^2.3.8",
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-native": "0.52.2",
     "react-native-swiper": "^1.5.13",
-    "react-navigation": "^1.0.0-beta.27",
+    "react-navigation": "^1.0.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"

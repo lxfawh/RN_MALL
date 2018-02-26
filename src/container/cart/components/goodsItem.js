@@ -3,15 +3,21 @@ import {
     TouchableNativeFeedback,
     Text,
     View,
-    CheckBox,
     Image,
     StyleSheet,
     Dimensions,
     PixelRatio
 } from 'react-native'
 
+import Radio from './radio'
+import Counter from './counter'
+
 const { height, width } = Dimensions.get('window')
-const LINE = 1 / PixelRatio.get();
+const LINE = 1 / PixelRatio.get()
+
+const pic = require("../../../assets/img/mix2.jpg")
+
+
 class GoodsItem extends React.Component {
     constructor(props) {
         super(props)
@@ -26,12 +32,15 @@ class GoodsItem extends React.Component {
         return (
             <TouchableNativeFeedback>
                 <View style={styles.item}>
-                    <CheckBox style={styles.check} />
-                    <Image style={styles.image} source={require("../../../assets/img/mix2.jpg")} />
+                    <Radio checked={this.props.checked} />
+                    <Image style={styles.image} source={this.props.pic || pic} />
                     <View style={[styles.info, { borderBottomWidth: this.props.last ? 0 : LINE }]} >
-                        <Text style={styles.title} numberOfLines={1}>小米MIX2 6GB+64G小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GB小米MIX2 6GB+64GBB</Text>
-                        <Text style={styles.intro} numberOfLines={1}>黑色陶瓷 64GB</Text>
-                        <Text style={styles.price}>￥2999</Text>
+                        <Text style={styles.title} numberOfLines={1}>{this.props.title || '小米MIX2 6GB+64G'}</Text>
+                        <Text style={styles.intro} numberOfLines={1}>{this.props.props || '黑色陶瓷 64GB'}</Text>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <Text style={styles.price}>￥{this.props.price || '2999'}</Text>
+                            <Counter />
+                        </View>
                     </View>
                 </View>
             </TouchableNativeFeedback >
@@ -56,7 +65,7 @@ const styles = StyleSheet.create({
         borderWidth: LINE,
         borderColor: '#ccc',
         borderRadius: 4,
-        marginRight: 20
+        marginRight: 10
     },
     info: {
         flex: 1,

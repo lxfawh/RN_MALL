@@ -28,8 +28,7 @@ const styles = StyleSheet.create({
     bar: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'flex-start',
-
+        justifyContent: 'center',
         height: 50,
         width: width,
         alignItems: 'center',
@@ -40,6 +39,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: '#333',
         fontWeight: 'normal',
-        marginLeft: 12,
+        marginLeft: 12
     }
 })

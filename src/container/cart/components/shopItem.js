@@ -2,13 +2,15 @@ import React from 'react'
 import {
     Text,
     View,
-    CheckBox,
     Image,
     StyleSheet,
     Dimensions,
     PixelRatio
 } from 'react-native'
+
+import Radio from './radio'
 import GoodsItem from './goodsItem'
+
 const { height, width } = Dimensions.get('window')
 const LINE = 1 / PixelRatio.get();
 // const OnePX = 1/PixelRatio.get()
@@ -21,12 +23,14 @@ class ShopsItem extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <CheckBox />
-                    <Text>小米旗舰店</Text>
+                    <Radio />
+                    <Image source={require('../../../assets/icon/shop.png')} style={styles.shopIcon} />
+                    <Text style={styles.title}>苹果Apple旗舰店</Text>
+                    <Image source={require('../../../assets/icon/icon-right.png')} style={styles.arrow} />
                 </View>
-                <GoodsItem />
-                <GoodsItem />
-                <GoodsItem last />
+                <GoodsItem pic={require('../../../assets/img/iphonex.jpg')} title="Apple iPhone X (A1865) 256GB 深空灰色" props="256GB 深空灰色" price="8999" />
+                <GoodsItem pic={require('../../../assets/img/iphone.jpg')} title="Apple iPhone 8 Plus 256GB 金色" props="256GB 金色" price="6688" />
+                <GoodsItem pic={require('../../../assets/img/ipad.jpg')} title="Apple iPad Pro 平板电脑 12.9英寸（256G WLAN版/A10X芯片/Retina屏/Multi-Touch技术 MP6J2CH/A）金色" props="12.9英寸256G WLAN版" price="6688" last />
             </View>
         )
     }
@@ -49,48 +53,24 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         height: 44,
-        borderBottomColor: '#ddd',
+        borderBottomColor: '#eee',
         borderBottomWidth: LINE,
         borderStyle: 'solid',
-        backgroundColor: '#fff'
-    },
-    item: {
-        width: width,
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        height: 100,
-        backgroundColor: '#fff'
-    },
-    image: {
-        height: 80,
-        width: 80,
-        borderStyle: 'solid',
-        borderWidth: LINE,
-        borderColor: '#ccc',
-        borderRadius: 4,
-        marginRight: 20
-    },
-    info: {
-        // borderBottomWidth:1,
-        // borderBottomColor:'#999',
-        // borderStyle:'solid'
+        backgroundColor: '#f9f9f9'
     },
     title: {
-        fontSize: 14,
         color: '#333',
-        height: 30
+        marginRight: 5
     },
-    intro: {
-        fontSize: 12,
-        color: '#999',
-        height: 30
+    shopIcon: {
+        width: 20,
+        height: 20,
+        marginRight: 5
     },
-    price: {
-        fontSize: 14,
-        color: '#ff9630',
-        height: 30
-    },
-
+    arrow: {
+        width: 16,
+        height: 16,
+        marginRight: 10
+    }
 })
 export default ShopsItem

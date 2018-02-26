@@ -17,6 +17,7 @@ import { ROUTE_CART, ROUTE_SEARCH } from '../../constants/routeType'
 import SearchBar from '../../components/searchBar'
 import Carousel from '../../components/carousel'
 import GoodsItem from './components/goodsItem'
+import TabBarItem from '../../components/tabBarItem'
 
 import { Button } from 'antd-mobile'
 
@@ -29,13 +30,28 @@ class HomePage extends React.Component {
         header: <SearchBar />,
         headerTitle: '首页',
         tabBarLabel: '首页',
-        tabBarIcon: <Image source={require('../../assets/icon/home.png')} />,
+        headerMode: 'screen',
+        // tabBarIcon: <Image source={require('../../assets/icon/home.png')} />,
+        tabBarIcon: ({ focused, tintColor }) => (
+            <TabBarItem
+                tintColor={tintColor}
+                focused={focused}
+                normalImage={require('../../assets/icon/home.png')}
+                selectedImage={require('../../assets/icon/home_fill.png')}
+            />
+        )
     }
 
     constructor(props) {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.navigation.setParams({
+            title: '自定义Header',
+            navigatePress: this.navigatePress
+        })
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -79,20 +95,24 @@ class HomePage extends React.Component {
 
                     <View style={styles.recCon}>
                         <View style={styles.recHeader}>
-                            <Text style={styles.recTit}>优品推荐</Text>
+                            <Text style={styles.recTit}>年货节</Text>
                             <Text style={styles.recMore} onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >更多 ></Text>
                         </View>
                         <Image source={require('../../assets/img/rec.jpg')} style={styles.recImg} resizeMode="cover" />
                     </View>
                     <View style={styles.recItemCon}>
                         <View style={styles.recHeader}>
-                            <Text style={styles.recTit}>优品推荐</Text>
+                            <Text style={styles.recTit}>新品推荐</Text>
                             <Text style={styles.recMore} onPress={() => { this.props.navigation.navigate(ROUTE_CART, { id: '12345676878' }) }} >更多 ></Text>
                         </View>
                         <View style={styles.recItem}>
+                            <GoodsItem pic={require('../../assets/img/iphonex.jpg')} title="Apple iPhone X (A1865) 256GB 深空灰色" />
+                            <GoodsItem pic={require('../../assets/img/ipad.jpg')} title="Apple iPad Pro 平板电脑 12.9英寸（256G WLAN版/A10X芯片/Retina屏/Multi-Touch技术 MP6J2CH/A）金色" />
+                            <GoodsItem pic={require('../../assets/img/iphone.jpg')} title="Apple iPhone 8 Plus 256GB 金色" />
                             <GoodsItem />
-                            <GoodsItem />
-                            <GoodsItem />
+                            <GoodsItem pic={require('../../assets/img/iphonex.jpg')} title="Apple iPhone X (A1865) 256GB 深空灰色" />
+                            <GoodsItem pic={require('../../assets/img/ipad.jpg')} title="Apple iPad Pro 平板电脑 12.9英寸（256G WLAN版/A10X芯片/Retina屏/Multi-Touch技术 MP6J2CH/A）金色" />
+                            <GoodsItem pic={require('../../assets/img/iphone.jpg')} title="Apple iPhone 8 Plus 256GB 金色" />
                             <GoodsItem />
                         </View>
                     </View>
@@ -124,19 +144,19 @@ const styles = StyleSheet.create({
         // backgroundColor:'#ccc'
     },
     navIcon: {
-        width: 44,
-        height: 44,
-        borderRadius: 18,
+        width: 40,
+        height: 40,
+        borderRadius: 14,
         alignItems: 'center',
     },
     navTitle: {
         fontSize: 12,
-        color: '#333',
+        color: '#666',
         marginTop: 10
     },
     recCon: {
         width: width,
-        height: 200,
+        height: 180,
         backgroundColor: '#eee',
         marginTop: 10,
         borderTopWidth: LINE,
@@ -162,7 +182,7 @@ const styles = StyleSheet.create({
     },
     recImg: {
         width: width,
-        height: 200
+        height: 140
     },
     recItemCon: {
         width: width,
@@ -170,15 +190,16 @@ const styles = StyleSheet.create({
         marginTop: 10,
         borderTopWidth: LINE,
         borderColor: '#ddd',
-        paddingBottom: 10
+        // paddingBottom: 10
     },
     recItem: {
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        marginTop: 4
     }
 })
 export default HomePage;
