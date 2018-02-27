@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        height: 150,
+        height: 144,
         position: 'relative',
         backgroundColor: '#ff0000'
     },
