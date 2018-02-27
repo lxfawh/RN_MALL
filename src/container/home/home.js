@@ -48,7 +48,7 @@ class HomePage extends React.Component {
 
     componentDidMount() {
         this.props.navigation.setParams({
-            title: '自定义Header',
+            title: '自定义Headers',
             navigatePress: this.navigatePress
         })
     }
