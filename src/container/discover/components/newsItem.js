@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        borderColor: '#f5f5f5',
+        borderColor: '#dfdfdf',
         borderBottomWidth: Line
     },
     text: {

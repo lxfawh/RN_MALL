@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         borderBottomWidth: LINE,
-        borderColor: '#ddd'
+        borderColor: '#eee'
     },
     navItem: {
         height: 90,
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#eee',
         marginTop: 10,
         borderTopWidth: LINE,
-        borderColor: '#ddd'
+        borderColor: '#eee'
     },
     recHeader: {
         height: 40,
