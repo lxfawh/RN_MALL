@@ -12,6 +12,7 @@ import {
 } from 'react-native'
 
 const LINE = 1 / PixelRatio.get();
+// const pic1 = require('https://img1.gtimg.com/ninja/2/2018/03/ninja152039400663776.jpg')
 
 import { ROUTE_CART, ROUTE_SEARCH, ROUTE_MSG } from '../../constants/routeType'
 import NavigatorBar from '../../components/navigatorBar'
