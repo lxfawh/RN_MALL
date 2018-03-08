@@ -15,9 +15,9 @@ class ListItem extends React.Component {
         let ico = this.props.icon ? (<Image style={styles.ico} source={this.props.icon} />) : (<View />)
         return (
             <TouchableNativeFeedback>
-                <View style={[styles.list, { height: this.props.last ? 50 : 50 + Line * 2, }]}>
+                <View style={styles.list}>
                     {ico}
-                    <View style={[styles.text, { borderColor: '#ddd', borderBottomWidth: this.props.last ? 0 : Line }]}>
+                    <View style={[styles.text, { borderBottomWidth: this.props.last ? 0 : Line }]}>
                         <Text style={styles.title}>{this.props.title || '请输入标题'}</Text>
                         <Image source={require('../../../assets/icon/icon-right.png')} style={styles.arrow} />
                     </View>
@@ -30,18 +30,21 @@ class ListItem extends React.Component {
 const styles = StyleSheet.create({
     list: {
         width: width,
-        // height: 50,
+        height: 50,
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        overflow: 'hidden'
     },
     text: {
         height: 50,
-        flexDirection: 'row',
         flex: 1,
+        flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        borderBottomColor: '#ddd',
+        borderStyle: 'solid'
     },
     ico: {
         width: 20,

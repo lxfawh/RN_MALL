@@ -50,7 +50,11 @@ class Discover extends React.Component {
         return (
             <View style={styles.container}>
                 <ScrollView style={styles.content}>
-                    <View style={{ height: 10 }}></View>
+                    <NewsItem />
+                    <NewsItem />
+                    <NewsItem />
+                    <NewsItem />
+                    <NewsItem />
                     <NewsItem />
                     <NewsItem />
                     <NewsItem />
@@ -74,4 +78,3 @@ const styles = StyleSheet.create({
     }
 })
 export default Discover;
-
