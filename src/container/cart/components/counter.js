@@ -35,14 +35,14 @@ export default class Counter extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    width: 86,
-    height: 28,
+    width: 80,
+    height: 22,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: LINE,
-    borderColor: '#999',
+    borderColor: '#ddd',
     borderRadius: 4,
     marginRight: 10
   },
@@ -51,16 +51,17 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   icon: {
-    width: 18,
-    height: 18
+    width: 12,
+    height: 12
   },
   input: {
     width: 30,
-    height: 28,
-    lineHeight: 30,
+    height: 22,
+    lineHeight: 22,
+    fontSize: 14,
     textAlign: 'center',
     borderLeftWidth: LINE,
     borderRightWidth: LINE,
-    borderColor: '#999',
+    borderColor: '#ddd',
   }
 })
