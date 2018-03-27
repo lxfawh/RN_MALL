@@ -14,7 +14,7 @@ export default class myBtn extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: '默认文字'
+            title: '默认文字 '
         }
     }
 
